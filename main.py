@@ -16,8 +16,7 @@ from app.requirement.deductions.numbers_only import NumbersOnly
 from app.requirement.deductions.sequential_letters import SequentialLetters
 from app.requirement.deductions.sequential_numbers import SequentialNumbers
 
-total = 0
-
+score = 0
 
 # _PASSWORD = Password('abc123knaabcwoni567g321=b123')
 _PASSWORD = Password(input('Digite uma senha: '))
@@ -42,34 +41,29 @@ _LIST_DEDUCTIONS_TESTS = [
     SequentialNumbers(_PASSWORD)
 ]
 
-
 print('\033[1;32m')
 print(format(' ADDITIONS TEST ', '=^50'))
 print()
 for test in _LIST_ADDITIONS_TESTS:
     print(format(str(type(test)).split('.')[-1][:-2], '<25'), end='\t')
-    print(format(f"Count: {test.get_count()}",'>10'), end='\t')
+    print(format(f"Count: {test.get_count()}", '>10'), end='\t')
     print(format(f"Bonus: +{test.get_bonus()}", '>10'))
     print()
-    total += test.get_bonus()
+    score += test.get_bonus()
 print('\033[m')
-
-
 
 print('\033[1;31m')
 print(format(' DEDUCTIONS TEST ', '=^50'))
 print()
 for test in _LIST_DEDUCTIONS_TESTS:
     print(format(str(type(test)).split('.')[-1][:-2], '<25'), end='\t')
-    print(format(f"Count: {test.get_count()}",'>10'), end='\t')
+    print(format(f"Count: {test.get_count()}", '>10'), end='\t')
     print(format(f"Bonus: {test.get_bonus()}", '>10'))
     print()
-    total += test.get_bonus()
+    score += test.get_bonus()
 print('\033[m')
 
-
-
-total = total if total < 100 else 100
+score = score if score < 100 else 100
 print('\033[1;36m')
-print(format(' TOTAL: ', '.<40'), format(f'{total} %', '<4'))
+print(format(' TOTAL: ', '.<40'), format(f'{score} %', '<4'))
 print('\033[m')

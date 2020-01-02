@@ -25,7 +25,7 @@ class SequentialNumbers(Deduction):
             else:
                 number = int(char)
 
-            if last_number and last_number + 1 == number:
+            if last_number and int(last_number) + 1 == number:
                 cont += 1 if cont > 0 else 2
             else:
                 total += cont - 2 if cont >= 3 else 0
@@ -48,7 +48,7 @@ class SequentialNumbers(Deduction):
             else:
                 number = int(char)
 
-            if last_number and last_number - 1 == number:
+            if last_number and int(last_number) - 1 == number:
                 cont += 1 if cont > 0 else 2
             else:
                 total += cont - 2 if cont >= 3 else 0
