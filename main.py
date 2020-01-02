@@ -18,8 +18,9 @@ from app.requirement.deductions.sequential_numbers import SequentialNumbers
 
 total = 0
 
-# _PASSWORD = Password('asd123DFG!@#')
-_PASSWORD = Password('abc123knaabcwoni567g321=b123')
+
+# _PASSWORD = Password('abc123knaabcwoni567g321=b123')
+_PASSWORD = Password(input('Digite uma senha: '))
 
 _LIST_ADDITIONS_TESTS = [
     NumberOfCharacters(_PASSWORD),
@@ -67,6 +68,8 @@ for test in _LIST_DEDUCTIONS_TESTS:
 print('\033[m')
 
 
+
+total = total if total < 100 else 100
 print('\033[1;36m')
-print(format(' TOTAL: ', '.<40'), format(f'{total}', '<4'))
+print(format(' TOTAL: ', '.<40'), format(f'{total} %', '<4'))
 print('\033[m')
