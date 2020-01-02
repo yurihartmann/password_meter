@@ -1,9 +1,9 @@
-from app.requirement.additions.additions import Additions
+from app.requirement.additions.addition import Addition
 from app.password.password import Password
 from app.rate.condition import Condition
 
 
-class Numbers(Additions):
+class Numbers(Addition):
 
     def __init__(self, password: Password):
         super().__init__(password, Condition(4))

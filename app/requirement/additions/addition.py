@@ -5,7 +5,7 @@ from app.password.password import Password
 from app.rate.rate import Rate
 
 
-class Additions(Requirement, ABC):
+class Addition(Requirement, ABC):
 
     def __init__(self, password: Password, rate: Rate):
         super().__init__(password, rate)
@@ -14,5 +14,5 @@ class Additions(Requirement, ABC):
         return self.rate.calculate(self)
 
     @abstractmethod
-    def get_count(self):
+    def get_count(self) -> int:
         raise NotImplemented

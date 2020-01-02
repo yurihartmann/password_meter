@@ -14,4 +14,4 @@ class Requirement(ABC):
 
     @abstractmethod
     def get_count(self):
-        raise NotImplemented
+        raise NotImplemented('NotImplemented get_count')
