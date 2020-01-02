@@ -8,13 +8,18 @@ from app.requirement.additions.uppercase_letters import UppercaseLetters
 from app.requirement.additions.lowercase_letters import LowercaseLetters
 from app.requirement.additions.numbers import Numbers
 
+from app.requirement.deductions.consecutive_lowercase_letters import ConsecutiveLowercaseLetters
+from app.requirement.deductions.consecutive_numbers import ConsecutiveNumbers
+from app.requirement.deductions.consecutive_uppercase_letters import ConsecutiveUppercaseLetters
 from app.requirement.deductions.letters_only import LettersOnly
 from app.requirement.deductions.numbers_only import NumbersOnly
+from app.requirement.deductions.sequential_letters import SequentialLetters
+from app.requirement.deductions.sequential_numbers import SequentialNumbers
 
 total = 0
 
 # _PASSWORD = Password('asd123DFG!@#')
-_PASSWORD = Password('asdaaaaaaa')
+_PASSWORD = Password('abc123knaabcwoni567g321=b123')
 
 _LIST_ADDITIONS_TESTS = [
     NumberOfCharacters(_PASSWORD),
@@ -28,7 +33,12 @@ _LIST_ADDITIONS_TESTS = [
 
 _LIST_DEDUCTIONS_TESTS = [
     LettersOnly(_PASSWORD),
-    NumbersOnly(_PASSWORD)
+    NumbersOnly(_PASSWORD),
+    ConsecutiveUppercaseLetters(_PASSWORD),
+    ConsecutiveLowercaseLetters(_PASSWORD),
+    ConsecutiveNumbers(_PASSWORD),
+    SequentialLetters(_PASSWORD),
+    SequentialNumbers(_PASSWORD)
 ]
 
 

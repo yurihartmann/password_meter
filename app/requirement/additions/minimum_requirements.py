@@ -31,7 +31,7 @@ class MinimumRequirements(Addition):
         return True if len(lowercase_letters) > 0 else False
 
     def has_uppercase_letters(self) -> bool:
-        uppercase_letters = [char for char in self.password.get_value() if char.islower()]
+        uppercase_letters = [char for char in self.password.get_value() if char.isupper()]
         return True if len(uppercase_letters) > 0 else False
 
     def has_numbers(self) -> bool:
