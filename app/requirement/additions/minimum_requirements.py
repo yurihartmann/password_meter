@@ -24,7 +24,7 @@ class MinimumRequirements(Addition):
             if item:
                 sum_minimum_requirements += 1
 
-        return sum_minimum_requirements
+        return sum_minimum_requirements if sum_minimum_requirements >= 4 else 0
 
     def has_lowercase_letters(self) -> bool:
         lowercase_letters = [char for char in self.password.get_value() if char.islower()]

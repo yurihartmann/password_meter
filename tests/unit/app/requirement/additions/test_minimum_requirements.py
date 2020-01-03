@@ -19,3 +19,8 @@ class TestMinimumRequirements(unittest.TestCase):
         minimum_requirements = MinimumRequirements(Mock())
         minimum_requirements.password.get_value.return_value = 'bb44BBhh'
         self.assertEqual(8, minimum_requirements.get_bonus())
+
+    def test_method_get_count_should_be_return_zero(self):
+        minimum_requirements = MinimumRequirements(Mock())
+        minimum_requirements.password.get_value.return_value = 'aasdaa'
+        self.assertEqual(0, minimum_requirements.get_count())
