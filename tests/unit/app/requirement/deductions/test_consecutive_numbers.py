@@ -12,20 +12,20 @@ class TestConsecutiveNumbers(unittest.TestCase):
 
     def test_method_get_count_with_consecutive_uppercase_letters_should_be_count_of_letters(self):
         consecutive_numbers = ConsecutiveNumbers(Mock())
-        consecutive_numbers.password.get_value.return_value = 'aAAAdd1rR2Rr333G441gg'
+        consecutive_numbers._password.get_value.return_value = 'aAAAdd1rR2Rr333G441gg'
         self.assertEqual(4, consecutive_numbers.get_count())
 
     def test_method_get_count_without_consecutive_uppercase_letters_should_be_zero(self):
         consecutive_numbers = ConsecutiveNumbers(Mock())
-        consecutive_numbers.password.get_value.return_value = 'aAAAdd1rR2Rr3G4gg'
+        consecutive_numbers._password.get_value.return_value = 'aAAAdd1rR2Rr3G4gg'
         self.assertEqual(0, consecutive_numbers.get_count())
 
     def test_method_get_bonus_with_consecutive_uppercase_letters_should_bonus(self):
         consecutive_numbers = ConsecutiveNumbers(Mock())
-        consecutive_numbers.password.get_value.return_value = 'aAAAdd1rR2Rr33G41gg'
+        consecutive_numbers._password.get_value.return_value = 'aAAAdd1rR2Rr33G41gg'
         self.assertEqual(-4, consecutive_numbers.get_bonus())
 
     def test_method_get_bonus_without_consecutive_uppercase_letters_should_be_zero(self):
         consecutive_numbers = ConsecutiveNumbers(Mock())
-        consecutive_numbers.password.get_value.return_value = 'aAAAdd1rR2Rr3G4gg'
+        consecutive_numbers._password.get_value.return_value = 'aAAAdd1rR2Rr3G4gg'
         self.assertEqual(0, consecutive_numbers.get_bonus())

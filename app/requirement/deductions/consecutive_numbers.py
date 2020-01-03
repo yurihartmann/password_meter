@@ -12,7 +12,7 @@ class ConsecutiveNumbers(Deduction):
         cont = 0
         last_char = ''
 
-        for char in self.password.get_value():
+        for char in self._password.get_value():
             if char.isnumeric() and last_char.isnumeric():
                 cont += 1
             last_char = char

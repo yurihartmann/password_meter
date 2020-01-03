@@ -9,5 +9,5 @@ class LowercaseLetters(Addition):
         super().__init__(password, ConditionIncrement(2))
 
     def get_count(self) -> int:
-        letters_lower_case = [letter for letter in self.password.get_value() if letter.islower()]
+        letters_lower_case = [letter for letter in self.get_password() if letter.islower()]
         return len(letters_lower_case)

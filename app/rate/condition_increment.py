@@ -8,7 +8,7 @@ class ConditionIncrement(Rate):
         super().__init__(weight)
 
     def calculate(self, requirement: Requirement):
-        length = len(requirement.password.get_value())
+        length = len(requirement._password.get_value())
         n = requirement.get_count()
         bonus = (length - n) * self.get_weight()
         return bonus if n > 0 else 0

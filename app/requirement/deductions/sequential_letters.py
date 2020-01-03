@@ -14,9 +14,9 @@ class SequentialLetters(Deduction):
     def get_sequential_letters(self) -> int:
         total = 0
         cont = 0
-        last_letter = self.password.get_value()[0]
+        last_letter = self._password.get_value()[0]
 
-        for char in self.password.get_value():
+        for char in self._password.get_value():
             if not char.isalpha():
                 last_letter = char
                 continue
@@ -35,9 +35,9 @@ class SequentialLetters(Deduction):
     def get_sequential_reversed_letters(self) -> int:
         total = 0
         cont = 0
-        last_letter = self.password.get_value()[0]
+        last_letter = self._password.get_value()[0]
 
-        for char in self.password.get_value():
+        for char in self._password.get_value():
             if not char.isalpha():
                 last_letter = char
                 continue

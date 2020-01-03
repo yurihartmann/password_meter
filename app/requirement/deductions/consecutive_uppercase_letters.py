@@ -12,7 +12,7 @@ class ConsecutiveUppercaseLetters(Deduction):
         cont = 0
         last_char = ''
 
-        for char in self.password.get_value():
+        for char in self._password.get_value():
             if char.isupper() and last_char.isupper():
                 cont += 1
             last_char = char

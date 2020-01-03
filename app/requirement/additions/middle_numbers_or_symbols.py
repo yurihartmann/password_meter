@@ -10,7 +10,7 @@ class MiddleNumbersOrSymbols(Addition):
         super().__init__(password, FlatRate(2))
 
     def get_count(self) -> int:
-        cuted_password = self.password.get_value()[1:-1]
+        cuted_password = self._password.get_value()[1:-1]
         cont = 0
         for char in cuted_password:
             if Symbols.is_symbol(char) or char.isnumeric():

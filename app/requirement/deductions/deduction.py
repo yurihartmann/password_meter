@@ -11,7 +11,7 @@ class Deduction(Requirement, ABC):
         super().__init__(password, rate)
 
     def get_bonus(self) -> int:
-        return self.rate.calculate(self) * -1
+        return self._rate.calculate(self) * -1
 
     @abstractmethod
     def get_count(self) -> int:

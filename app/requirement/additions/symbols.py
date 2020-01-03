@@ -10,14 +10,14 @@ class Symbols(Addition):
 
     def get_count(self) -> int:
         cont = 0
-        for char in self.password.get_value():
+        for char in self._password.get_value():
             if self.is_symbol(char):
                 cont += 1
         return cont
 
     @classmethod
     def is_symbol(self, char: str) -> bool:
-        if not char.isnumeric() and not char.isalpha():
+        if not char.isnumeric() and not char.isalpha() and char != ' ':
             return True
         else:
             return False
