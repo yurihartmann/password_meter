@@ -9,7 +9,7 @@ class NumberOfCharacters(Addition):
         super().__init__(password, FlatRate(4))
 
     def get_count(self) -> int:
-        return len(self._password.get_value())
+        return len(self.get_password())
 
 
 

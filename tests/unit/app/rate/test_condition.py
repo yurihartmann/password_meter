@@ -1,7 +1,6 @@
 import unittest
-from unittest.mock import Mock
+from unittest.mock import Mock, MagicMock
 
-from app.password.password import Password
 from app.rate.condition import Condition
 
 
@@ -17,7 +16,7 @@ class TestCondition(unittest.TestCase):
 
     def test_calculate_method_should_be_return_multiple_number_of_count_and_weight(self):
         requirement_mock = Mock()
-        requirement_mock.password = Password('asd123fgh456')
-        requirement_mock.get_count.return_value = 10
+        requirement_mock.get_password = MagicMock(return_value='')
+        requirement_mock.get_count = MagicMock(return_value=10)
         condition = Condition(4)
         self.assertEqual(40, condition.calculate(requirement_mock))

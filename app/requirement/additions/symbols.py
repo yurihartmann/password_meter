@@ -10,7 +10,7 @@ class Symbols(Addition):
 
     def get_count(self) -> int:
         cont = 0
-        for char in self._password.get_value():
+        for char in self.get_password():
             if self.is_symbol(char):
                 cont += 1
         return cont

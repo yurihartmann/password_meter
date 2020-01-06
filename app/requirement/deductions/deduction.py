@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 
 from app.requirement.requirement import Requirement
 from app.password.password import Password
@@ -13,6 +13,3 @@ class Deduction(Requirement, ABC):
     def get_bonus(self) -> int:
         return self._rate.calculate(self) * -1
 
-    @abstractmethod
-    def get_count(self) -> int:
-        raise NotImplemented

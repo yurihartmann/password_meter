@@ -19,3 +19,4 @@ class Requirement(ABC):
 
     def get_password(self) -> str:
         return self._password.get_value()
+

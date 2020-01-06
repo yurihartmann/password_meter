@@ -9,4 +9,4 @@ class UppercaseLetters(Addition):
         super().__init__(password, ConditionIncrement(2))
 
     def get_count(self) -> int:
-        return len([letter for letter in self._password.get_value() if letter.isupper()])
+        return len([letter for letter in self.get_password() if letter.isupper()])

@@ -27,20 +27,20 @@ class MinimumRequirements(Addition):
         return sum_minimum_requirements if sum_minimum_requirements >= 4 else 0
 
     def has_lowercase_letters(self) -> bool:
-        lowercase_letters = [char for char in self._password.get_value() if char.islower()]
+        lowercase_letters = [char for char in self.get_password() if char.islower()]
         return True if len(lowercase_letters) > 0 else False
 
     def has_uppercase_letters(self) -> bool:
-        uppercase_letters = [char for char in self._password.get_value() if char.isupper()]
+        uppercase_letters = [char for char in self.get_password() if char.isupper()]
         return True if len(uppercase_letters) > 0 else False
 
     def has_numbers(self) -> bool:
-        numbers = [char for char in self._password.get_value() if char.isnumeric()]
+        numbers = [char for char in self.get_password() if char.isnumeric()]
         return True if len(numbers) > 0 else False
 
     def has_symbols(self) -> bool:
-        symbols = [char for char in self._password.get_value() if Symbols.is_symbol(char)]
+        symbols = [char for char in self.get_password() if Symbols.is_symbol(char)]
         return True if len(symbols) > 0 else False
 
     def has_minimum_8_characters(self) -> bool:
-        return True if len(self._password.get_value()) >= 8 else False
+        return True if len(self.get_password()) >= 8 else False

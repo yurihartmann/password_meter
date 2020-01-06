@@ -9,7 +9,7 @@ class Numbers(Addition):
         super().__init__(password, Condition(4))
 
     def get_count(self) -> int:
-        numbers = [char for char in self._password.get_value() if char.isnumeric()]
+        numbers = [char for char in self.get_password() if char.isnumeric()]
         return len(numbers)
 
 

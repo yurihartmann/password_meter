@@ -12,4 +12,4 @@ class Rate(ABC):
 
     @abstractmethod
     def calculate(self, requirement):
-        raise NotImplemented
+        pass

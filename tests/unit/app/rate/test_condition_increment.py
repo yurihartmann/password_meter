@@ -1,5 +1,5 @@
 import unittest
-from unittest.mock import Mock
+from unittest.mock import Mock, MagicMock
 
 from app.rate.condition_increment import ConditionIncrement
 
@@ -16,7 +16,7 @@ class TestConditionIncrement(unittest.TestCase):
 
     def test_calculate_method_should_be_return_multiple_number_of_count_and_weight(self):
         requirement_mock = Mock()
-        requirement_mock.password.get_value.return_value = 'asd123fgh456'
-        requirement_mock.get_count.return_value = 6
+        requirement_mock.get_password = MagicMock(return_value='asd123fgh456')
+        requirement_mock.get_count = MagicMock(return_value=6)
         condition_increment = ConditionIncrement(2)
         self.assertEqual(12, condition_increment.calculate(requirement_mock))

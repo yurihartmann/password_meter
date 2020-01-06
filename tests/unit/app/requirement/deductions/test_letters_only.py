@@ -1,5 +1,5 @@
 import unittest
-from unittest.mock import Mock
+from unittest.mock import Mock, MagicMock
 
 from app.requirement.deductions.letters_only import LettersOnly
 
@@ -11,22 +11,26 @@ class TestLettersOnly(unittest.TestCase):
         self.assertIsInstance(letters_only, LettersOnly)
 
     def test_method_get_count_with_only_letters_should_be_count_of_letters(self):
-        letters_only = LettersOnly(Mock())
-        letters_only._password.get_value.return_value = 'aaAaaAaa'
+        password_mock = Mock()
+        password_mock.get_value = MagicMock(return_value='aaAaaAaa')
+        letters_only = LettersOnly(password_mock)
         self.assertEqual(8, letters_only.get_count())
 
     def test_method_get_count_with_not_only_letters_should_be_zero(self):
-        letters_only = LettersOnly(Mock())
-        letters_only._password.get_value.return_value = 'a1a2a3a4'
+        password_mock = Mock()
+        password_mock.get_value = MagicMock(return_value='a1a2a3a4')
+        letters_only = LettersOnly(password_mock)
         self.assertEqual(0, letters_only.get_count())
 
     def test_method_get_bonus_with_only_letters_should_be_count_of_letters(self):
-        letters_only = LettersOnly(Mock())
-        letters_only._password.get_value.return_value = 'aaAaaAaa'
+        password_mock = Mock()
+        password_mock.get_value = MagicMock(return_value='aaAaaAaa')
+        letters_only = LettersOnly(password_mock)
         self.assertEqual(-8, letters_only.get_bonus())
 
     def test_method_get_bonus_with_not_only_letters_should_be_zero(self):
-        letters_only = LettersOnly(Mock())
-        letters_only._password.get_value.return_value = 'a1a2a3a4'
+        password_mock = Mock()
+        password_mock.get_value = MagicMock(return_value='a1a2a3a4')
+        letters_only = LettersOnly(password_mock)
         self.assertEqual(0, letters_only.get_bonus())
 

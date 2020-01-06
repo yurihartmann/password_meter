@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import ABC
 
 from app.requirement.requirement import Requirement
 from app.password.password import Password

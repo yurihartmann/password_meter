@@ -16,9 +16,9 @@ class SequentialNumbers(Deduction):
     def get_sequential_numbers(self) -> int:
         total = 0
         cont = 0
-        last_number = self._password.get_value()[0]
+        last_number = self.get_password()[0]
 
-        for char in self._password.get_value():
+        for char in self.get_password():
             if not char.isnumeric():
                 last_number = None
                 continue
@@ -39,9 +39,9 @@ class SequentialNumbers(Deduction):
     def get_sequential_reversed_numbers(self) -> int:
         total = 0
         cont = 0
-        last_number = self._password.get_value()[0]
+        last_number = self.get_password()[0]
 
-        for char in self._password.get_value():
+        for char in self.get_password():
             if not char.isnumeric():
                 last_number = None
                 continue
