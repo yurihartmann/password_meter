@@ -1,2 +1,10 @@
-# password_meter
+# Password Meter
 Password meter in python
+
+<img width="430" src="class_diagram.jpeg">
+
+### Install
+
+To install the dependencies, follow the command below:
+
+`pipenv install`
