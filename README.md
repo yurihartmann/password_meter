@@ -1,7 +1,13 @@
 # Password Meter
 Password meter in python
 
-<img width="430" src="class_diagram.jpeg">
+### Run
+
+To run password meter, follow the command below:
+
+`python main.py`
+
+<img src="class_diagram.jpeg">
 
 ### Install
 
