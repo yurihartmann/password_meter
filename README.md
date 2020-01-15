@@ -14,6 +14,15 @@ To run password meter, follow the command below:
 
 `python main.py`
 
+### Run Tests with pytest
+
+To run test password meter, follow the command below:
+
+`pytest`
+
+To generate the html test, follow the command below:
+
+`pytest --cov=app/ --cov-report=html`
 
 ### Class Diagram
 
